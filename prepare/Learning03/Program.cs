@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning03 World!");
+        Journal ofCourse = new Journal();
+        Menu whatever = new Menu("Journal Program 1.29.86", ofCourse);
     }
 }

@@ -1,0 +1,31 @@
+Requirements:
+-Write new entry: Give a prompt and save their response
+-Display Journal: Show entries
+-Save journal to file
+-Provide menu
+-At least five different prompts
+
+-Classes for major functions
+-At least three classes
+-Use abstraction correctly
+
+Classes:
+    Program
+    -------
+    Runs all other classes
+
+    Journal
+    -------
+    Keeps track of journal data
+
+    Input
+    -----
+    Deals with input
+
+    Display
+    -------
+    Deals with showing data
+
+    Menu
+    ----
+    Uses input and display classes and creates menu
