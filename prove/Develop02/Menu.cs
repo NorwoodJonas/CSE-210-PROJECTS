@@ -14,11 +14,12 @@ class Menu
     public void ShowMenu()
     {
         Console.WriteLine($"---{name}---");
-        Console.WriteLine("1. ");
-        Console.WriteLine("2. ");
-        Console.WriteLine("3. ");
-        Console.WriteLine("4. ");
-        Console.WriteLine("5. ");
+        Console.WriteLine("1. Write in journal");
+        Console.WriteLine("2. Read the journal");
+        Console.WriteLine("3. Save the journal to a file");
+        Console.WriteLine("4. Read the journal from a file");
+        Console.WriteLine("5. Quit");
+        Console.Write("Choose an option: ");
     }
 
     public bool Option()
