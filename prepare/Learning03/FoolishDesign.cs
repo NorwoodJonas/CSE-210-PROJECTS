@@ -1,12 +1,16 @@
+using Microsoft.VisualBasic;
+
 class FoolishDesign
 {
-    public void Prompt()
+    private readonly string[] sigh = {"One", "Two", "Three", "Four", "Five"};
+    public string Prompt()
     {
-
+        var rand = new Random(); //wow, declaring a new random each time...
+        return sigh[rand.Next(0, sigh.Length - 1)];
     }
 
-    public void Date()
+    public string Date()
     {
-        
+        return DateTime.Now.ToString();
     }
 }

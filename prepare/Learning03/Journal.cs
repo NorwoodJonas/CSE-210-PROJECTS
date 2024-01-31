@@ -15,6 +15,11 @@ class Journal
         }
     }
 
+    public void Stuff(LinkedList<string> x) //because you are stuffing a journal full of... stuff
+    {
+        entries = x;
+    }
+
     public LinkedList<string> Texted()
     {
         return entries;
