@@ -2,6 +2,11 @@ class Journal
 {
     private LinkedList<string>  entries;
 
+    public Journal()
+    {
+        entries = new LinkedList<string>();
+    }
+
     public void Write(string entry)
     {
         entries.AddLast(entry);

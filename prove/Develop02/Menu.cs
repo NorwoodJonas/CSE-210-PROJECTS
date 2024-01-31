@@ -42,7 +42,7 @@ class Menu
         do
         {
             e = Console.ReadLine();
-            entry += e;
+            entry += "\n" + e;
         } while(e != "\".\"");
         j.Write(entry);
     }
