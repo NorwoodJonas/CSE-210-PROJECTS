@@ -6,7 +6,7 @@ class FoolishDesign
     public string Prompt()
     {
         var rand = new Random(); //wow, declaring a new random each time...
-        return sigh[rand.Next(0, sigh.Length - 1)];
+        return sigh[rand.Next(0, sigh.Length)];
     }
 
     public string Date()
