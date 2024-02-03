@@ -13,7 +13,7 @@ class Menu
 
     public void ShowMenu()
     {
-        Console.WriteLine($"---{name}---");
+        Console.WriteLine($"\n---{name}---"); //adds newline each menu so it looks nicer
         Console.WriteLine("1. Write in journal");
         Console.WriteLine("2. Read the journal");
         Console.WriteLine("3. Save the journal to a file");
@@ -25,6 +25,7 @@ class Menu
     public bool Option()
     {
         int x = int.Parse(Console.ReadLine());
+        Console.WriteLine("");
         if(x == 1) {Entry(); return true;};
         if(x == 2) {Show(); return true;};
         if(x == 3) {Save(); return true;};
