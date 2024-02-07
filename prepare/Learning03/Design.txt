@@ -1,31 +1,21 @@
 Requirements:
--Write new entry: Give a prompt and save their response
--Display Journal: Show entries
--Save journal to file
--Provide menu
--At least five different prompts
+-Make a fraction class
+    -That class has "attributes" for the numerator and denominator
+    -Has functions to get and change those things
+    -Has methods that return both fractional and decimal notation
 
--Classes for major functions
--At least three classes
--Use abstraction correctly
+Fractions:
+    numerator
+    denominator
 
-Classes:
-    Program
-    -------
-    Runs all other classes
+    Fraction()
+    Fraction(int x) //whole number
+    Fraction(int numerator, int denominator)
 
-    Journal
-    -------
-    Keeps track of journal data
+    GetNumerator()
+    GetDenominator()
+    SetNumerator()
+    SetDenominator()
 
-    Input
-    -----
-    Deals with input
-
-    Display
-    -------
-    Deals with showing data
-
-    Menu
-    ----
-    Uses input and display classes and creates menu
+    GetFractionAsString()
+    ToFloat()
