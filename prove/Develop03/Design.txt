@@ -1,0 +1,51 @@
+Requirements:
+    -Have a scripture and reference (e.g. John 2:4)
+    -Allow for range of verses (e.g. Matthew 3:5-7)
+    -Clear console and display scripture
+    -Tell user to press enter or type quit
+    -If user presses enter clear screen and redisplay scripture with some words hidden
+    -Keep prompting until all words are hidden
+    -If no words left, then exit program
+
+    -Use encapsulation
+    -At least 3 classes in addition to program (They want one for the scripture, one for the reference, and one for the word)
+    -Provide multiple constructors (One for scriptures with one verse, others with 2)
+
+Classes:
+    Program
+        -Main() //loops through displaying and removing words from scriptures
+    
+    Scripture
+        -Private List<words> verse
+        -Private Reference ref
+        -
+        -Scripture(Reference, list<string> Verse) //makes a scripture in the easiest way, ref = reference verse = Verse
+        -Scripture(book, verse, string verse) //Makes a scripture with book, verse, and a string that is the verse
+        -Scripture(book, verse) //this may not be done, it would get the data from the internet somewhere
+        -
+        -Display() //displays reference, then words by looping through each word with a space at the end.
+        -RandomlyRemoveWord() //Goes through list of words and sets random ones that have a true visibility false
+    
+    Reference
+        -Private string book
+        -Private list<int> verses
+        -
+        -Reference(book, verse) //constructors pretty self explanatory
+        -Reference(book, verse, verseEnd)
+        -View() //returns as string
+
+    Word
+        -string word
+        -bool visibility
+        -
+        -Word(string word) //basic constructor
+        -
+        -View() //returns the word if visibility is true, if it is false it returns "_" as long as the word
+        -SetVisibility() //getters and setter, could do in a lot of ways
+        -GetVisibility()
+
+Interaction: //shows levels in which classes are being used in where
+    ---Program---
+        ---Main()---
+            ---Scripture---
+                ---Reference---|---Word---
