@@ -18,4 +18,16 @@ class Word
         if(show) return word;
         else return blank;
     }
+    public void makeInvisible()
+    {
+        show = false;
+    }
+    public void reveal()
+    {
+        show = true;
+    }
+    public bool lookFor()
+    {
+        return show;
+    }
 }

@@ -8,4 +8,10 @@ class Reference
         verses[0] = verse;
         verses[1] = verse;
     }
+    public Reference(string book, int versace, int versEnd)
+    {
+        this.book = book;
+        verses[0] = versace;
+        verses[1] = versEnd;
+    }
 }
