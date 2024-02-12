@@ -1,3 +1,5 @@
+using System.Transactions;
+
 class Journal
 {
     private LinkedList<string>  entries;
