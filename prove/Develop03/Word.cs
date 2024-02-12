@@ -13,20 +13,20 @@ class Word
         }
         blank = temp;
     }
-    public string getWord()
+    public string GetWord()
     {
         if(show) return word;
         else return blank;
     }
-    public void makeInvisible()
+    public void Hide()
     {
         show = false;
     }
-    public void reveal()
+    public void Reveal()
     {
         show = true;
     }
-    public bool lookFor()
+    public bool LookFor()
     {
         return show;
     }
