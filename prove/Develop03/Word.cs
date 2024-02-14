@@ -11,6 +11,8 @@ class Word
         {
             temp += "_"; //concatanate, hopefully
         }
+        int z = word.Length;
+        if(z != 0) if(word[z - 1] == '\n') temp += "\n"; //A really annoying workaround, that doesn't work, fix this
         blank = temp;
     }
     public string GetWord()

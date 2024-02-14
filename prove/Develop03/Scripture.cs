@@ -3,7 +3,7 @@ using Microsoft.VisualBasic;
 class Scripture
 {
     private Reference deference;
-    private List<Word> words;
+    private List<Word> words = new();
     public Scripture(string ward, Reference rf)
     {
         deference = rf;
@@ -17,15 +17,15 @@ class Scripture
     {
         foreach(Word soared in words)
         {
-            Console.Write(soared.GetWord());
+            Console.Write(soared.GetWord() + " ");
         }
     }
-    public void HideWords(int x) //hide x words
+    public bool HideWords(int x) //hide x words
     {
         var ran= new Random();
         int y = 0;
         int z = 0;
-        while(!(x == 0 && z == words.Count))
+        while(!(x == 0))
         {
             if(words[y].LookFor())
             {
@@ -38,8 +38,14 @@ class Scripture
             else //to end if there arent enough words to hide
             {
                 z++;
+                if(z == words.Count)
+                {
+                    return false;
+                }
             }
             y++;
+            if(y >= words.Count()) y = 0;
         }
+        return true;
     }
 }
