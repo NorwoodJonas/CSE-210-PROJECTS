@@ -24,10 +24,16 @@ and to be trodden under foot of men.", referee);
         do
         {
             scripted.ReadScripture();
-            Console.WriteLine("Enter or quit");
+            Console.WriteLine("\nEnter or quit");
             quitter = Console.ReadLine();
             if(quitter == "quit") return;
         } while(scripted.HideWords(3));
-        Console.WriteLine("Ending program..."); //Display one more time before this
+        //if(quitter != "quit")
+        //{
+        //    scripted.ReadScripture(); //This is a lazy way to display one more time
+        //    Console.WriteLine("Enter or quit");
+        //    quitter = Console.ReadLine();
+        //}
+        Console.WriteLine("Ending program...");
     }
 }

@@ -12,7 +12,7 @@ class Word
             temp += "_"; //concatanate, hopefully
         }
         int z = word.Length;
-        if(z != 0) if(word[z - 1] == '\n') temp += "\n"; //A really annoying workaround, that doesn't work, fix this
+        if(z != 0) if(word[z - 1] == ':' || word[z - 1] == ';' || word[z - 1] == '.' || word[z - 1] == ',') temp += "\n"; //A really annoying workaround for formatting
         blank = temp;
     }
     public string GetWord()

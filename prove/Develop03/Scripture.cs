@@ -44,7 +44,11 @@ class Scripture
                 }
             }
             y++;
-            if(y >= words.Count()) y = 0;
+            if(y >= words.Count())
+            {
+                y = 0;
+                z = 0;
+            }
         }
         return true;
     }
