@@ -12,10 +12,10 @@ class Program
         Console.WriteLine("Done."); //This is long because I don't want to use @ because it includes newlines, and I don't want that because I tried a thing... Nevermind.
         Console.WriteLine("Starting program loop...");
         Console.WriteLine("Clearing screen...");
-        Console.Clear();
 
         do
         {
+            Console.Clear();
             scripted.ReadScripture();
             Console.WriteLine("\nEnter or quit");
             quitter = Console.ReadLine();
@@ -23,6 +23,7 @@ class Program
         } while(scripted.HideWords(3));
         if(quitter != "quit")
         {
+            Console.Clear();
             scripted.ReadScripture(); //This is a lazy way to display one more time
             Console.WriteLine("Enter");
             quitter = Console.ReadLine();
