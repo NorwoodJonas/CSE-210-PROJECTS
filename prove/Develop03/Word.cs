@@ -11,8 +11,8 @@ class Word
         {
             temp += "_"; //concatanate, hopefully
         }
-        int z = word.Length;
-        if(z != 0) if(word[z - 1] == ':' || word[z - 1] == ';' || word[z - 1] == '.' || word[z - 1] == ',') temp += "\n"; //A really annoying workaround for formatting
+        //int z = word.Length;
+        //if(z != 0) if(word[z - 1] == ':' || word[z - 1] == ';' || word[z - 1] == '.' || word[z - 1] == ',') temp += "\n"; //A really annoying workaround for formatting
         blank = temp;
     }
     public string GetWord()

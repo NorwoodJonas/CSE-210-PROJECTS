@@ -15,8 +15,15 @@ class Scripture
     }
     public void ReadScripture()
     {
+        int x = 0;
         foreach(Word soared in words)
         {
+            x++;
+            if(x == 10)
+            {
+                Console.WriteLine(); //A workaround to fix formatting
+                x = 0;
+            }
             Console.Write(soared.GetWord() + " ");
         }
     }
