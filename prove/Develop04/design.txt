@@ -1,1 +1,85 @@
 Mindfulness program
+
+
+
+Program:
+    Main() //loops menu until Quit
+
+Menu: //Make this easily reusable this time
+    DisplayMenu()
+    GetOption()
+    Quit()
+
+Activity: //Child of Activity
+    Activity(introM, outroM)
+    string introMessage
+    string outroMessage
+    private int time (could be float)
+    GetTime()
+    StartActivity() (empty function)
+
+Breathing: //Child of Activity
+    Breathing(introM, outroM) : base(introM, outroM)
+    Breathe(time) //Prompts breathing in and out, once
+    StartActivity() //Runs the activity
+
+Reflecting: //Child of Activity
+    Reflecting(introM, outroM) : base(introM, outroM)
+    RandomPrompt() //Displays random prompt, might have it just return a random prompt though.
+    RandomQuest()  //same as above with a question instead
+    StartActivity() //Runs the activity with all of it's rules and shows the intro message, outro message, and get time
+
+Listing: //Child of Activity
+    Listing(introM, outroM) : base(introM, outroM)
+    RandomPrompt()
+    GetInput() //maybe unnecessary
+    StartActivity() //Pretty much the same as all else, loops GetInput until time is up
+
+Animation: (static class)
+    Handles Animation
+    Spinner()
+    Countdown()
+    Periods()
+
+Interaction:
+
+Program--->Menu--->Breathing--->Animation
+                |--->Reflecting--->Animation
+                |--->Listing--->Animation
+
+Blocks:
+_____________
+|           |
+|  program  |
+|           |
+|           |
+_____________
+
+_____________
+|           |
+| Animation |
+|           |
+|           |
+_____________
+
+_____________
+|           |
+|   Menu    |
+|           |
+|           |
+_____________
+
+_____________
+|           |
+| Activity  |
+|           |
+|           |
+_____________
+   ^     ^________________________________
+   |               |                      |
+_____________    _______________     _______________
+|           |    |             |     |             |
+| Breathing |    | Reflecting  |     | Listing     |
+|           |    |             |     |             |
+|           |    |             |     |             |
+_____________    _______________     _______________
