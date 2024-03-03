@@ -14,11 +14,14 @@ class Listing : Activity
 
     public void GetInputWait()
     {
-        while(true)
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = DateTime.Now;
+        endTime = endTime.AddSeconds(time);
+        while(currentTime < endTime)
         {
             Console.Write(">");
             Console.ReadLine();
-            Thread.Sleep(time * 1000);
+            currentTime = DateTime.Now;
         }
     }
 

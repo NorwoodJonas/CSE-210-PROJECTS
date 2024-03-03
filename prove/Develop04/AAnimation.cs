@@ -7,16 +7,16 @@ class AAnimation
         {
             ClearChars(1);
             Console.Write("\\");
-            Thread.Sleep(25);
+            Thread.Sleep(250);
             ClearChars(1);
             Console.Write("|");
-            Thread.Sleep(25);
+            Thread.Sleep(250);
             ClearChars(1);
             Console.Write("/");
-            Thread.Sleep(25);
+            Thread.Sleep(250);
             ClearChars(1);
             Console.Write("-");
-            Thread.Sleep(25);
+            Thread.Sleep(250);
         }
     }
 
