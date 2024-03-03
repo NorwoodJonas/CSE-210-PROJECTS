@@ -12,20 +12,14 @@ class Listing : Activity
         return prompts[ran.Next(prompts.Length)];
     }
 
-    public async void GetInput()
+    public void GetInputWait()
     {
         while(true)
         {
             Console.Write(">");
             Console.ReadLine();
+            Thread.Sleep(time * 1000);
         }
-    }
-
-    public async void ForceList() //imagine using threads just for this thing
-    {
-        Task task1 = Task.Delay(1000 * time);
-        Task task2 = Task.Delay(1000); //GetInput();
-        await Task.WhenAny(task1, task2);
     }
 
     public override void StartActivity()
@@ -36,7 +30,7 @@ class Listing : Activity
         Console.WriteLine(GetRandomPrompt());
         Console.WriteLine("Here is a random countdown timer:");
         AAnimation.Countdown(5);
-        ForceList();
+        GetInputWait();
 
         Console.WriteLine(outroM);
     }

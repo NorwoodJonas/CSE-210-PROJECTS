@@ -37,7 +37,9 @@ class Reflect : Activity
         while(cycles > 0)
         {
             Console.Write(GetRandomQuestion());
+            Console.WriteLine();
             AAnimation.Spin(10);
+            cycles--;
         }
 
         Console.WriteLine(outroM);
