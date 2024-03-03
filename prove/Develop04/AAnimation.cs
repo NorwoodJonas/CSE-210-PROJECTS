@@ -2,16 +2,20 @@ class AAnimation
 {
     public static void Spin(int time) //Now using lazy coding practices
     {
-        Console.WriteLine("-");
-        for(int x = time * 10; time > 0; time--)
+        Console.Write("-");
+        for(int x = time * 100; time > 0; time--)
         {
-            Console.WriteLine("\b \b\\");
+            ClearChars(1);
+            Console.Write("\\");
             Thread.Sleep(25);
-            Console.WriteLine("\b \b|");
+            ClearChars(1);
+            Console.Write("|");
             Thread.Sleep(25);
-            Console.WriteLine("\b \b/");
+            ClearChars(1);
+            Console.Write("/");
             Thread.Sleep(25);
-            Console.WriteLine("\b \b-");
+            ClearChars(1);
+            Console.Write("-");
             Thread.Sleep(25);
         }
     }

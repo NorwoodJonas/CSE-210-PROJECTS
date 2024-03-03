@@ -12,7 +12,7 @@ class Listing : Activity
         return prompts[ran.Next(prompts.Length)];
     }
 
-    public void GetInput()
+    public async void GetInput()
     {
         while(true)
         {
@@ -24,7 +24,7 @@ class Listing : Activity
     public async void ForceList() //imagine using threads just for this thing
     {
         Task task1 = Task.Delay(1000 * time);
-        Task task2 = GetInput();
+        Task task2 = Task.Delay(1000); //GetInput();
         await Task.WhenAny(task1, task2);
     }
 
@@ -36,7 +36,7 @@ class Listing : Activity
         Console.WriteLine(GetRandomPrompt());
         Console.WriteLine("Here is a random countdown timer:");
         AAnimation.Countdown(5);
-        ForceList(time);
+        ForceList();
 
         Console.WriteLine(outroM);
     }
