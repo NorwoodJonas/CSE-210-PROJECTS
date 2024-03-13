@@ -1,0 +1,52 @@
+Requirements:
+    -Make a checklist kind of thing
+    -Keep track of points
+    -Pretty simple
+
+Classes:
+    -Program
+    -FileSave
+    -Goal
+        -Eternal //indentation shows inheritance
+        -checklist
+
+
+Program:
+    -Main(): Has a list of goals, also handles the menu
+
+FileSave: //probably static
+    -Save() //Uses delimeters to save each goal to a newline, may need something to specify what kind of goal is on each line
+    -Load() //Loads
+
+Goal: //assume all goal classes have constructors
+    -int points
+    -bool completed
+    -string goal
+    *
+    -Goal(string goal, int points) //A constructor
+    -DisplayGoal() //Returns a string
+    -CompleteGoal() //Turns completed to true
+    -GetPoints() //Gets how many points this goal has currently and returns them
+
+EternalG:
+    -int timesCompleted
+    *
+    -EternalG(string goal, int points)
+    -override CompleteGoal() //Adds one to times completed
+    -override DisplayGoal()
+    -override GetPoints() //timesCompleted * points
+
+
+ChecklistG:
+    -int bonus
+    -int timesCompleted
+    -int timesWantToComplete
+    *
+    -ChecklistG(string goal, int points, int bonus points, int times) //Wow, a constructor
+    -override CompleteGoal() //Adds another to times completed
+    -override DisplayGoal()
+
+Interaction:
+        Program-------------------------------------
+                |        |           |             |
+              Goal   EternalG    ChecklistG     FileSave

@@ -13,5 +13,8 @@ class Program
         {
             Console.WriteLine($"{s.GetColor()} : {s.GetArea()}");
         }
+
+        shapes[0].SetColor("Purple");
+        Console.WriteLine(shapes[0].GetColor());
     }
 }
