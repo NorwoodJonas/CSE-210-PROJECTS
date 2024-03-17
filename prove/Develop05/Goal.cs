@@ -37,6 +37,6 @@ class Goal
 
     public void Complete()
     {
-        return;
+        completed = true;
     }
 }
