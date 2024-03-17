@@ -24,4 +24,9 @@ class Eternal : Goal
     {
         return $"[{timesCompleted}] {goal}";
     }
+
+    public new void SaveMe()
+    {
+        //Goal type, goal, points, times completed. Make another constructor.
+    }
 }

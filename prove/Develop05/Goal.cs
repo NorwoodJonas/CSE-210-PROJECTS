@@ -10,6 +10,17 @@ class Goal
         this.points = points;
     }
 
+    public Goal(string goal, int points, bool completed)
+    {
+        this.goal = goal;
+        this.points = points;
+        this.completed = completed;
+    }
+
+    public Goal()
+    {
+    }
+
     public string GetGoal()
     {
         return goal;
@@ -38,5 +49,10 @@ class Goal
     public void Complete()
     {
         completed = true;
+    }
+
+    public void SaveMe()
+    {
+        //Goal type, goal, points, completed. Make another constructor
     }
 }
