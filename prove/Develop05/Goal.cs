@@ -4,7 +4,7 @@ class Goal
     protected string goal;
     protected bool completed = false;
 
-    Goal(string goal, int points)
+    public Goal(string goal, int points)
     {
         this.goal = goal;
         this.points = points;
@@ -33,5 +33,10 @@ class Goal
     public string GoalDisplay()
     {
         return $"[{(completed?"x":" ")}] {goal}";
+    }
+
+    public void Complete()
+    {
+        return;
     }
 }
