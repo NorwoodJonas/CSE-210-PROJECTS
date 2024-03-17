@@ -42,6 +42,22 @@ class Program
             }
             else if(temper[0] == "")
             {
+                //Add goal
+                if(temper[1] == "normal")
+                {
+                    goals.Add(new Goal(temper[2], int.Parse(temper[3])));
+                }
+                else if(temper[1] == "eternal")
+                {
+                    goals.Add(new Eternal(temper[2], int.Parse(temper[3])));
+                }
+                else if(temper[1] == "checklist")
+                {
+                    goals.Add(new Checklist(temper[2], int.Parse(temper[3]), int.Parse(temper[4]), int.Parse(temper[5])));
+                }
+            }
+            else if(temper[0] == "")
+            {
                 x = int.Parse(temper[1]); //Wow, great design reusing variables to save memory
                 //Complete goal
                 goals[x].Complete();
