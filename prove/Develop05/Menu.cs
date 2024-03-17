@@ -11,6 +11,9 @@
 *                  //{
 *                       Define the function to be added
 *                  //}
+*           -Allow for adding multiple functions as one command: Menu.AddCommand(Action[]);
+*           -Should I not force documentation in AddCommand?
+*           -Make options for things to look nice, option to clear console after each command?
 */
 
 using System.Formats.Asn1;
@@ -23,10 +26,10 @@ class Menu
     private string temp = "";
     private string[] temper;
 
-    Menu()
+    public Menu()
     {
         AddCommand("help", new Action<string>(Help), "helps with stuff"); //Adds help command to list of commands
-        AddCommand("quit", new Action(Quit), "Quits the menu loop");
+        AddCommand("quit", new Action(Quit), "Quits the menu loop"); //Probably don't need to do new action, maybe, it should save memory anyway
     }
 
     public void Quit()
