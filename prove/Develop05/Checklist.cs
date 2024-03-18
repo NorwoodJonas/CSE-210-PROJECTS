@@ -6,13 +6,16 @@ class Checklist : Goal
     private int completionGoal;
     private int bonusPoints; //probably use as normal points as points just resolves once
 
-    public Checklist(string goal, int bonusPoints, int timesWantToComplete, int points) : base(goal, points)
+    public Checklist(string goal, int points, int bonusPoints, int timesWantToComplete) : base(goal, points)
     {
         this.bonusPoints = bonusPoints;
+        completionGoal = timesWantToComplete;
     }
 
     public Checklist(string goal, int points, int bonusPoints, int timesCompleted, int compGoal)
     {
+        this.points = points;
+        this.goal = goal;
         this.bonusPoints = bonusPoints;
         this.timesCompleted = timesCompleted;
         completionGoal = compGoal;
@@ -55,10 +58,10 @@ class Checklist : Goal
     {
         List<string> thing = new(); //(goal,points.ToString(),(completed?"true":"false"));
         thing.Add(goal);
-        thing.Add(points.ToString());
-        thing.Add(bonusPoints.ToString());
-        thing.Add(timesCompleted.ToString());
-        thing.Add(completionGoal.ToString());
+        thing.Add("~" + points.ToString());
+        thing.Add("~" + bonusPoints.ToString());
+        thing.Add("~" + timesCompleted.ToString());
+        thing.Add("~" + completionGoal.ToString());
 
         return thing;
     }

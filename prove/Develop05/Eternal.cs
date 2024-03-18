@@ -10,6 +10,11 @@ class Eternal : Goal
     {
     }
 
+    public Eternal(string goal, int points, int timesCompleted) : base(goal, points)
+    {
+        this.timesCompleted = timesCompleted;
+    }
+
     public new void Complete() //I have no idea what new does here, TBH
     {
         timesCompleted++;
@@ -29,8 +34,8 @@ class Eternal : Goal
     {
         List<string> thing = new(); //(goal,points.ToString(),(completed?"true":"false"));
         thing.Add(goal);
-        thing.Add(points.ToString());
-        thing.Add(timesCompleted.ToString());
+        thing.Add("~" + points.ToString());
+        thing.Add("~" + timesCompleted.ToString());
 
         return thing;
     }

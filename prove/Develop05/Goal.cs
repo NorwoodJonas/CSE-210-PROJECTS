@@ -40,8 +40,8 @@ class Goal
     {
         List<string> thing = new(); //(goal,points.ToString(),(completed?"true":"false"));
         thing.Add(goal);
-        thing.Add(points.ToString());
-        thing.Add(completed?"true":"false");
+        thing.Add("~" + points.ToString());
+        thing.Add("~" + (completed?"true":"false"));
 
         return thing;
     }

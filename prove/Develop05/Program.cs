@@ -40,7 +40,7 @@ class Program
                 Console.WriteLine($"Total points: {x}");
                 x = 1;
             }
-            else if(temper[0] == "") //create goalType goal points (completionNumber bonusPoints) //last only for a checklist goal
+            else if(temper[0] == "") //create goalType goal points (bonusPoints completionNumber) //last only for a checklist goal
             {
                 //Add goal
                 if(temper[1] == "normal")
@@ -66,7 +66,7 @@ class Program
             else if(temper[0] == "") //save filepath
             {
                 //Save Goals and such
-                foreach(Goal g in goals)
+                foreach(Goal g in goals) //Will it put one array one one line? or will I need to make the strings the things between newlines?
                 {
                     File.AppendAllLines(temper[1], g.GetSaveString());
                 }
@@ -74,7 +74,24 @@ class Program
             else if(temper[0] == "") //load filepath
             {
                 //Load Goals
-                
+                string[] lines = File.ReadAllLines(temper[1]);
+                string[] t = ;
+                foreach(string l in lines)
+                {
+                    t = l.Split("~");
+                    if(t[0] == "normal") //Make sure these are right
+                    { //Goal, points, completed?
+                        goals.Add(new Goal(t[1], int.Parse(t[2]), (t[3] == "true")?true:false));
+                    }
+                    else if(t[0] == "eternal")
+                    { //goal, points, timesCompleted
+                        goals.Add(new Eternal(t[1], int.Parse(t[2]), int.Parse(t[3])));
+                    } //
+                    else if(t[0] == "checklist")
+                    { //goal, points, bonusPoints, timeCompleted, completionGoals
+                        goals.Add(new Checklist(t[1], int.Parse(t[2]), int.Parse(t[3]), int.Parse(t[4]), int.Parse(t[5])));
+                    }
+                }
             }
             else if(temper[0] == "")
             {
