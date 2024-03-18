@@ -19,17 +19,16 @@ class Program
         string temp = "";
         string[] temper;
         while(!quit)
-        {
-            Console.Write("Commands:\n(display)\n(add goalType [normal eternal or checklist] goal points [bonusPoints completions goal -used only for checklist goal-])\n(complete goalNumber)\n(save filePath)\n(load filePath)\n(quit)\n-");
+        {            Console.Write("Commands:\n(display)\n(add-goalType[normal eternal or checklist]-goal-points-[bonusPoints-completionGoal >used only for checklist goal<])\n(complete-goalNumber)\n(save-filePath)\n(load-filePath)\n(quit)\n-");
             temp = Console.ReadLine();
-            temper = temp.Split();
+            temper = temp.Split("-");
             if(temper[0] == "display") //display
             {
                 //Display goals
                 
                 foreach(Goal g in goals)
                 {
-                    Console.WriteLine($"{0}.{1}", x, g.GoalDisplay());
+                    Console.WriteLine($"{x}.{g.GoalDisplay()}");
                     x++;
                 }
                 x = 0;
