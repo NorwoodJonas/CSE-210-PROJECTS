@@ -57,9 +57,9 @@ class Program
             }
             else if(temper[0] == "complete") //complete goalNumber
             {
-                x = int.Parse(temper[1]); //Wow, great design reusing variables to save memory
+                x = int.Parse(temper[1]) - 1; //Wow, great design reusing variables to save memory
                 //Complete goal
-                goals[x].Complete();
+                Console.WriteLine($"You Just got {goals[x].Complete()} points!!!");
                 x = 1;
             }
             else if(temper[0] == "save") //save filepath

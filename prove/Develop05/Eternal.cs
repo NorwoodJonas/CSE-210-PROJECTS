@@ -15,9 +15,10 @@ class Eternal : Goal
         this.timesCompleted = timesCompleted;
     }
 
-    public new void Complete() //I have no idea what new does here, TBH
+    public new int Complete() //I have no idea what new does here, TBH
     {
         timesCompleted++;
+        return points;
     }
 
     public new int GetPoints()

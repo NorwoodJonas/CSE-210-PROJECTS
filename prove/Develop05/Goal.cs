@@ -51,8 +51,9 @@ class Goal
         return $"[{(completed?"x":" ")}] {goal}";
     }
 
-    public void Complete()
+    public int Complete()
     {
         completed = true;
+        return points;
     }
 }
