@@ -15,24 +15,24 @@ class Eternal : Goal
         this.timesCompleted = timesCompleted;
     }
 
-    public new int Complete() //I have no idea what new does here, TBH
+    public override int Complete() //I have no idea what new does here, TBH
     {
         timesCompleted++;
         return points;
     }
 
-    public new int GetPoints()
+    public override int GetPoints()
     {
         return timesCompleted * points;
     }
 
-    public new string GoalDisplay()
+    public override string GoalDisplay()
     {
         return $"[{timesCompleted}] {goal}";
     }
 
-    public new string GetSaveString()
+    public override string GetSaveString()
     {
-        return goal + "~" + points.ToString() + "~" + timesCompleted.ToString();
+        return "eternal" + "~" + goal + "~" + points.ToString() + "~" + timesCompleted.ToString();
     }
 }

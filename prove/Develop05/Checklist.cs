@@ -25,7 +25,7 @@ class Checklist : Goal
         }
     }
 
-    public new int Complete() //I have no idea what new does here, TBH
+    public override int Complete() //I have no idea what new does here, TBH
     {
         if(completed == true) //wow, great code practice
         {
@@ -47,18 +47,18 @@ class Checklist : Goal
         }
     }
 
-    public new int GetPoints()
+    public override int GetPoints()
     {
         return timesCompleted * points + (completed?bonusPoints:0);
     }
 
-    public new string GoalDisplay()
+    public override string GoalDisplay()
     {
         return $"[{timesCompleted}//{completionGoal}] {goal}";
     }
 
-    public new string GetSaveString()
+    public override string GetSaveString()
     {
-        return goal + "~" + points.ToString() + "~" + bonusPoints.ToString() + "~" + timesCompleted.ToString() + "~" + completionGoal.ToString();
+        return "checklist" + "~" + goal + "~" + points.ToString() + "~" + bonusPoints.ToString() + "~" + timesCompleted.ToString() + "~" + completionGoal.ToString();
     }
 }

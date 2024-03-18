@@ -31,22 +31,22 @@ class Goal
         return completed;
     }
 
-    public int GetPoints()
+    public virtual int GetPoints()
     {
         return completed?points:0;
     }
 
-    public string GetSaveString()
+    public virtual string GetSaveString()
     {
-        return goal + "~" + points.ToString() + "~" + (completed?"true":"false");
+        return "normal" + "~" + goal + "~" + points.ToString() + "~" + (completed?"true":"false");
     }
 
-    public string GoalDisplay()
+    public virtual string GoalDisplay()
     {
         return $"[{(completed?"x":" ")}] {goal}";
     }
 
-    public int Complete()
+    public virtual int Complete()
     {
         completed = true;
         return points;
