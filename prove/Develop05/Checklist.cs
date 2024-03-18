@@ -51,8 +51,15 @@ class Checklist : Goal
         return $"[{timesCompleted}/{completionGoal}] {goal}";
     }
 
-    public new void SaveMe()
+    public new List<string> GetSaveString()
     {
-        //Goal type, goal, points, bonus points, times completed, completion goal. Make another constructor.
+        List<string> thing = new(); //(goal,points.ToString(),(completed?"true":"false"));
+        thing.Add(goal);
+        thing.Add(points.ToString());
+        thing.Add(bonusPoints.ToString());
+        thing.Add(timesCompleted.ToString());
+        thing.Add(completionGoal.ToString());
+
+        return thing;
     }
 }

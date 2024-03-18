@@ -25,8 +25,13 @@ class Eternal : Goal
         return $"[{timesCompleted}] {goal}";
     }
 
-    public new void SaveMe()
+    public new List<string> GetSaveString()
     {
-        //Goal type, goal, points, times completed. Make another constructor.
+        List<string> thing = new(); //(goal,points.ToString(),(completed?"true":"false"));
+        thing.Add(goal);
+        thing.Add(points.ToString());
+        thing.Add(timesCompleted.ToString());
+
+        return thing;
     }
 }

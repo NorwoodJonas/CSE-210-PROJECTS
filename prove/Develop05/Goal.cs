@@ -36,9 +36,14 @@ class Goal
         return completed?points:0;
     }
 
-    public string GetSaveString()
+    public List<string> GetSaveString()
     {
-        return goal + "~" + points.ToString() + "~" + (completed?"true":"false");
+        List<string> thing = new(); //(goal,points.ToString(),(completed?"true":"false"));
+        thing.Add(goal);
+        thing.Add(points.ToString());
+        thing.Add(completed?"true":"false");
+
+        return thing;
     }
 
     public string GoalDisplay()
@@ -49,10 +54,5 @@ class Goal
     public void Complete()
     {
         completed = true;
-    }
-
-    public void SaveMe()
-    {
-        //Goal type, goal, points, completed. Make another constructor
     }
 }

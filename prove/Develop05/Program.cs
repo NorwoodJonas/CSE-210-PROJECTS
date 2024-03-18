@@ -23,7 +23,7 @@ class Program
             Console.Write("Type help for commands\n-");
             temp = Console.ReadLine();
             temper = temp.Split();
-            if(temper[0] == "")
+            if(temper[0] == "") //display
             {
                 //Display goals
                 
@@ -40,7 +40,7 @@ class Program
                 Console.WriteLine($"Total points: {x}");
                 x = 1;
             }
-            else if(temper[0] == "")
+            else if(temper[0] == "") //create goalType goal points (completionNumber bonusPoints) //last only for a checklist goal
             {
                 //Add goal
                 if(temper[1] == "normal")
@@ -56,20 +56,25 @@ class Program
                     goals.Add(new Checklist(temper[2], int.Parse(temper[3]), int.Parse(temper[4]), int.Parse(temper[5])));
                 }
             }
-            else if(temper[0] == "")
+            else if(temper[0] == "") //complete goalNumber
             {
                 x = int.Parse(temper[1]); //Wow, great design reusing variables to save memory
                 //Complete goal
                 goals[x].Complete();
                 x = 1;
             }
-            else if(temper[0] == "")
+            else if(temper[0] == "") //save filepath
             {
                 //Save Goals and such
+                foreach(Goal g in goals)
+                {
+                    File.AppendAllLines(temper[1], g.GetSaveString());
+                }
             }
-            else if(temper[0] == "")
+            else if(temper[0] == "") //load filepath
             {
                 //Load Goals
+                
             }
             else if(temper[0] == "")
             {
@@ -81,20 +86,5 @@ class Program
             }
         }
         Console.WriteLine("Goodbye...");
-    }
-
-    public static void AddGoal()
-    {
-        return;
-    }
-
-    public static void CompleteGoal()
-    {
-        return;
-    }
-
-    public static void ExamineGoals()
-    {
-        return;
     }
 }
