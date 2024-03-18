@@ -31,13 +31,8 @@ class Eternal : Goal
         return $"[{timesCompleted}] {goal}";
     }
 
-    public new List<string> GetSaveString()
+    public new string GetSaveString()
     {
-        List<string> thing = new(); //(goal,points.ToString(),(completed?"true":"false"));
-        thing.Add(goal);
-        thing.Add("~" + points.ToString());
-        thing.Add("~" + timesCompleted.ToString());
-
-        return thing;
+        return goal + "~" + points.ToString() + "~" + timesCompleted.ToString();
     }
 }

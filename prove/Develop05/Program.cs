@@ -65,10 +65,12 @@ class Program
             else if(temper[0] == "save") //save filepath
             {
                 //Save Goals and such
+                List<string> t = new();
                 foreach(Goal g in goals) //Will it put one array one one line? or will I need to make the strings the things between newlines?
                 {
-                    File.AppendAllLines(temper[1], g.GetSaveString());
+                    t.Add(g.GetSaveString());
                 }
+                File.AppendAllLines(temper[1], t);
             }
             else if(temper[0] == "load") //load filepath
             {

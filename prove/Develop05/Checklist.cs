@@ -57,15 +57,8 @@ class Checklist : Goal
         return $"[{timesCompleted}//{completionGoal}] {goal}";
     }
 
-    public new List<string> GetSaveString()
+    public new string GetSaveString()
     {
-        List<string> thing = new(); //(goal,points.ToString(),(completed?"true":"false"));
-        thing.Add(goal);
-        thing.Add("~" + points.ToString());
-        thing.Add("~" + bonusPoints.ToString());
-        thing.Add("~" + timesCompleted.ToString());
-        thing.Add("~" + completionGoal.ToString());
-
-        return thing;
+        return goal + "~" + points.ToString() + "~" + bonusPoints.ToString() + "~" + timesCompleted.ToString() + "~" + completionGoal.ToString();
     }
 }
