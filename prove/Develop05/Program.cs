@@ -20,10 +20,10 @@ class Program
         string[] temper;
         while(!quit)
         {
-            Console.Write("Type help for commands\n-");
+            Console.Write("Commands:\n(display)\n(add goalType [normal eternal or checklist] goal points [bonusPoints completions goal -used only for checklist goal-])\n(complete goalNumber)\n(save filePath)\n(load filePath)\n(quit)\n-");
             temp = Console.ReadLine();
             temper = temp.Split();
-            if(temper[0] == "") //display
+            if(temper[0] == "display") //display
             {
                 //Display goals
                 
@@ -40,7 +40,7 @@ class Program
                 Console.WriteLine($"Total points: {x}");
                 x = 1;
             }
-            else if(temper[0] == "") //create goalType goal points (bonusPoints completionNumber) //last only for a checklist goal
+            else if(temper[0] == "add") //create goalType goal points (bonusPoints completionNumber) //last only for a checklist goal
             {
                 //Add goal
                 if(temper[1] == "normal")
@@ -56,14 +56,14 @@ class Program
                     goals.Add(new Checklist(temper[2], int.Parse(temper[3]), int.Parse(temper[4]), int.Parse(temper[5])));
                 }
             }
-            else if(temper[0] == "") //complete goalNumber
+            else if(temper[0] == "complete") //complete goalNumber
             {
                 x = int.Parse(temper[1]); //Wow, great design reusing variables to save memory
                 //Complete goal
                 goals[x].Complete();
                 x = 1;
             }
-            else if(temper[0] == "") //save filepath
+            else if(temper[0] == "save") //save filepath
             {
                 //Save Goals and such
                 foreach(Goal g in goals) //Will it put one array one one line? or will I need to make the strings the things between newlines?
@@ -71,11 +71,11 @@ class Program
                     File.AppendAllLines(temper[1], g.GetSaveString());
                 }
             }
-            else if(temper[0] == "") //load filepath
+            else if(temper[0] == "load") //load filepath
             {
                 //Load Goals
                 string[] lines = File.ReadAllLines(temper[1]);
-                string[] t = ;
+                string[] t = Array.Empty<string>();
                 foreach(string l in lines)
                 {
                     t = l.Split("~");
@@ -93,7 +93,7 @@ class Program
                     }
                 }
             }
-            else if(temper[0] == "")
+            else if(temper[0] == "quit")
             {
                 quit = true;
             }

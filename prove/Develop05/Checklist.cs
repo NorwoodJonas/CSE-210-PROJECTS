@@ -32,15 +32,15 @@ class Checklist : Goal
         }
         else
         {
-        if(timesCompleted < (completionGoal - 1)) //Do I want this - 1?
-        {
-          timesCompleted++;
-        }
-        else //I really hope nobody tries completing a completed goal.
-        {
+            if(timesCompleted < (completionGoal - 1)) //Do I want this - 1?
+            {
             timesCompleted++;
-            completed = true;
-        }
+            }
+            else //I really hope nobody tries completing a completed goal.
+            {
+                timesCompleted++;
+                completed = true;
+            }
         }
     }
 
@@ -51,7 +51,7 @@ class Checklist : Goal
 
     public new string GoalDisplay()
     {
-        return $"[{timesCompleted}/{completionGoal}] {goal}";
+        return $"[{timesCompleted}//{completionGoal}] {goal}";
     }
 
     public new List<string> GetSaveString()
