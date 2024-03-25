@@ -1,0 +1,81 @@
+What will the program do:
+    -The program will be a text adve3nture with intuitive commands
+    -It will do this by analyzing the words typed into the console and make a guess at what the user means
+
+Requirements:
+    -Have at least 8 classes
+    -Use OOP
+    -Use C#
+    -Be written by me
+    -abstraction/encapsulation/inheritence/polymorphism
+    -Inheritence and polymorphism aren't required but should explain why you don't use it
+
+Classes:
+    -Program //Has a main loop, all this should do is instantiate objects and use those objects
+        -Main() //Instantiates objects and starts loop
+
+    -Dictionary //Not like the dictionary data structure, though it may be used in the class
+        -Private dict<string, string[]> words      //You type in a word and it gives what type of word it is (verb, adjective, noun, etc.) in [0] and most basic synonym in [1]
+        -       //if input not in dictionary it looks at the probability of just being mistyped and gives best guess, or returns Unknown
+        -Dictionary() //Instantiates dictionary with default values
+        -Dictionary(string[], string[]) //Instantiates dictionary with key value pairs
+        -
+        -Meaning(string word) //looks for type of word and returns most basic synonym
+        -
+    
+    -UserInput //Contains string[] of user input, string[] of words the program thinks they mean, and a string[] of the type of word it is
+        private string[] input
+        private string[] meaning
+        private string[] action //A list of the actual commands related to the meaning
+
+    -Commanding //I don't know what to call this, this is just a class outside of the main program that will deal with actually analyzing what the use input means
+        -Do(string[] input, string[] meaning) //Does whatever it thinks is best based on meaning and input string, uses dictionary to see type of word
+        -AddCommand() //maybe, adding functions to objects in a class is weird
+
+
+    //Other part of this project
+    -World //Contains a list of areas, also global information about state of world
+        -private List<Area> world
+        -private DateTime time //based on real world time, for realism
+    
+    -Area //Contains information about specific area you are in, objects and directions you can go, NPCs, Enemies, etc.
+        -List<Item> items //why use list instead of array?
+        -List<Location> itemLocation //could add stuff for locked doors and such
+        -List<portal> entrance/exit
+
+    -Portal
+    -string desc
+    -*Area area //tells where this takes you
+    -
+    -Use() //takes you there
+
+    -Character //Contains information about player, health, items, strength, intelligence, etc.
+    private int health
+    private int stats //all general stats, used for calculation of combat and whatnot
+    private string[] inventory //the inventory of your character
+
+    -NPC : Character //Automated character, probably child of character
+        -Runs program, except automated, for each thing, subclass of character
+
+    -Item //Contains description of item, and commands to run when you interact with it
+    -Item() //defines command that the item uses, I am not yet sure how this will be done
+    -
+    -Use() //invokes item related command
+
+    -Spell //Defines spell that affects stuff
+    -Spell() //same thing as item
+    -
+    -Cast() //invokes spell related command
+
+Interaction:
+    Program-------------------------
+             |        |            |
+             |        |            |
+           world      |            |
+            |         |            |
+          Area     Dictionary   UserInput
+       ____|__________________         |
+       |        |      |      |        |
+    Character  NPC   Item   portal    Commanding  //portal also contains areas
+      |         |
+    Item     spells   //Item and spells loop back to affect things like area and character

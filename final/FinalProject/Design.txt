@@ -1,0 +1,45 @@
+SynthOrganThing:
+
+Goal:
+    -Be able to create audio
+    -Select which sounds are being layered
+    -needs 8 classes
+
+    Classes:
+        -pipe (general term for class that generates waveform, with functioncs such as return point in wave or whatever)
+            -Additive Synth (Defines based on oscillators and selection) //define waveforms based on sines and cosines?
+            -FM Synth (Defined based on oscilators oscillating oscillators)
+            -Sample (Defined based on audio files)
+            -Ambient Noise? (Outputs microphone input)
+        -Console (manages what pipes are played with the keyboard)
+        -Input(Gets input from user)
+        -Program(Starts everything and manages what is happening)
+        -sequencer (takes and input melody and loops it)
+            -Arpeggiator
+
+
+or
+
+Try implementing NLP
+
+    How?
+        -Put input into array
+        -Reference with dictionary
+        -Look for similar words for those unknown
+        -Make an array defining what words are what
+        -Reference verb requested with closest command
+        -Use command with most relevant rest of request
+        -Return input
+
+        Classes:
+            -dictionary //reference for all words
+            -Command //Various actions, probably static
+            -UserInput //Find a better name, runs NLP when instantiated with a string[]
+            -Program
+            -World //Not enough classes, so maybe combine with a simple text adventure?
+            -Area //Tells which areas are linked and gives description
+            -Character
+            -Item //use object on thing, passes reference to object
+            -npc
+
+or maybe just do a complex text adventure
