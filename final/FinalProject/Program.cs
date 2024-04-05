@@ -5,7 +5,8 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("---PoorMansGamesV1.1---");
-        Console.WriteLine("Initializing objects");
+        Console.WriteLine("Initializing world");
+        World w = new();
         Commanding commands = new();
         bool done = false;
         string input = "";
