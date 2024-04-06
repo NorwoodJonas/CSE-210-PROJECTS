@@ -4,6 +4,8 @@ class World
     private List<Area> areas;
     public Area activeArea;
 
+    public Character pc;
+
     public World()
     {
     }

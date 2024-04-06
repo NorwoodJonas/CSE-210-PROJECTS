@@ -86,6 +86,21 @@ class Commanding
         //Puts item in area
     }
 
+    public void Take(List<string> theft)
+    {
+        //Take item from active area
+        //Find item in area
+        GenericThing g = new(); //fix this
+        foreach(GenericThing trinket in worldly.activeArea.thingsInArea)
+        {
+            if(trinket.GetName() == theft[0]) //could make it so you can list all you want to take
+            {
+                g = trinket;
+            }
+        }
+        worldly.pc.Give(g);
+    }
+
     public void PassTime(int x)
     {
         worldly.SetTime(x, true);

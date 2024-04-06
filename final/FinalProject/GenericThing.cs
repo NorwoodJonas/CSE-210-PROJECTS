@@ -1,5 +1,6 @@
 abstract class GenericThing //this allows me to have an array of things in an area with all the same functions I can call
 { //You will see
+protected List<GenericThing> inventory; //Don't you love it when a class contains a list of it's own things?
 protected string name;
 protected string description;
 protected int health; //All things have health, maybe a portal will have way more health but IDK
@@ -58,5 +59,10 @@ public string DescribeGenericThing()
 public void ChangeLocation() //changes location to wherever
 {
 
+}
+
+public void Give(GenericThing shiny)
+{
+    inventory.Add(shiny);
 }
 }
