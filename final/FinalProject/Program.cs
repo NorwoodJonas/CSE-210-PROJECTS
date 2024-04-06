@@ -7,7 +7,8 @@ class Program
         Console.WriteLine("---PoorMansGamesV1.1---");
         Console.WriteLine("Initializing world");
         World w = new();
-        Commanding commands = new();
+        WordReference dic = new();
+        Commanding commands = new(dic, w);
         bool done = false;
         string input = "";
         string[] whatever;
@@ -15,7 +16,7 @@ class Program
         {
             input = Console.ReadLine();
             whatever = input.Split();
-            Commanding.Do(whatever);
+            commands.Do(whatever);
         }
     }
 }
