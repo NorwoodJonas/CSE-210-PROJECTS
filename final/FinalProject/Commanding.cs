@@ -7,7 +7,7 @@ class Commanding
     World worldly;
     Dictionary<string, string[]> neededThings;
 
-    private delegate string[] Why(bool x);
+    private delegate void cultist(List<string> imps); //I need to make all of these functions take List<string>
 
     public Commanding(WordReference dic, World worldd)
     {
@@ -58,7 +58,7 @@ class Commanding
             temp++;
         }
         //Try finding other words associated with that action
-        string[] wordsToFind = neededThings[input[actionNum]];
+        string[] wordsToFind = neededThings[meaning[actionNum]];
         List<string> arguably = new();
         foreach(string s in wordsToFind)
         {
@@ -67,7 +67,7 @@ class Commanding
             {
                 if(s == wordType[temp])
                 {
-                    arguably.Add(input[temp]);
+                    arguably.Add(meaning[temp]);
                 }
                 temp++;
             }
@@ -76,7 +76,7 @@ class Commanding
         //I need a list of word types I need with each command. Done.
         //Guess object in area associated with nouns, only if you need nouns though
         //Call function with associated words
-        functional[input[actionNum]](arguably); //How to properly invoke these delegates?
+        cultist worthy = functional[input[actionNum]]; //How to properly invoke these delegates? Getting closer.
     }
     //Make all of the commands that affect things here, things like items, spells, characters, and such will call commands here
 
