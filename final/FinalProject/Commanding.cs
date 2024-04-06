@@ -32,8 +32,20 @@ class Commanding
         Console.WriteLine($"You fail to {0} anywhere", input[0]); //you fail to go anywhere, etc. Could be done better
     }
 
-    public void Do(string[] input, string[] wordType)
+    public void Do(string[] input)
     {
+        //Get a string[] of wordtypes and string[] of meanings
+        List<string> wordType = new(); //I prefer using lists, okay
+        List<string> meaning = new(); //may need to change from input to meaning in this code
+        string[] whyDoINeedThis = {"",""}; //I don't, I figure it will save processing at the cost of memory
+
+        foreach(string s in input)
+        {
+            whyDoINeedThis = dict.Meaning(s);
+            meaning.Add(whyDoINeedThis[0]);
+            meaning.Add(whyDoINeedThis[1]);
+        }
+
         //Go look at the first action
         int actionNum = -1;
         int temp = 0; //we love our temp workers
