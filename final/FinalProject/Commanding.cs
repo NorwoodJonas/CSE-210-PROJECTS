@@ -2,12 +2,12 @@ using System.Diagnostics.Contracts;
 
 class Commanding
 {
-    Dictionary<string, Delegate> functional;
+    Dictionary<string, Cultist> functional;
     WordReference dict;
     World worldly;
     Dictionary<string, string[]> neededThings;
 
-    private delegate void cultist(List<string> imps); //I need to make all of these functions take List<string>
+    private delegate void Cultist(List<string> imps); //I need to make all of these functions take List<string>
 
     public Commanding(WordReference dic, World worldd)
     {
@@ -76,7 +76,8 @@ class Commanding
         //I need a list of word types I need with each command. Done.
         //Guess object in area associated with nouns, only if you need nouns though
         //Call function with associated words
-        cultist worthy = functional[input[actionNum]]; //How to properly invoke these delegates? Getting closer.
+        Cultist worthy = functional[input[actionNum]]; //How to properly invoke these delegates? Getting closer.
+        worthy(arguably); //Okay, so, apparently I can use a non-generic delegate, which while I like using generic things it is better not to. SMH
     }
     //Make all of the commands that affect things here, things like items, spells, characters, and such will call commands here
 
@@ -95,7 +96,7 @@ class Commanding
 
     }
 
-    public static void Heal(GenericThing h)
+    public static void Heal(GenericThing h) //For these things, give the name of the genericthing/things in a list, then have the function find them themselves
     {
         
     }
