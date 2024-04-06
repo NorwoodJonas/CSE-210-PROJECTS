@@ -8,8 +8,10 @@ class WordReference //cant call it dictionary because that already exists
     {
         //add default values to dictionary
         words.Add("!!!1337!!!-x-x-x-***CODING***", new string[2] {"unknown", "unknown"}); //this is so I can have an unknown word that is unlikely to be accidently triggered
-        words.Add("", new string[2] {"", ""});
-        words.Add("", new string[2] {"", ""});
+        words.Add("move", new string[2] {"go", "action"});
+        words.Add("enter", new string[2] {"go", "action"});
+        words.Add("go", new string[2] {"go", "action"});
+        words.Add("travel", new string[2] {"go", "action"});
     }
 
     public WordReference(string[] words, string[][] meanings) //better have same length of arrays

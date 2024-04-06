@@ -18,11 +18,23 @@ protected int speech;
 protected int streetSmarts;
 protected int bookSmarts;
 protected int magicAffinity;
+protected int areaNumber;
 
 public int GetHealth()
 {
     return health;
 }
+
+public int AreaNum()
+{
+    return areaNumber;
+}
+
+public string GetName()
+{
+    return name;
+}
+
 public void Damage(int damage, string type)
 {
     return; //why should you be able to damage a GenericThing?

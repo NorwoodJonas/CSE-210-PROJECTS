@@ -1,6 +1,6 @@
 class Area //should contain list of items, a description, atmosphere, and such
 {
-    private List<GenericThing> thingsInArea;
+    public List<GenericThing> thingsInArea; //I need to access these things, don't blame me
     private string areaName;
     private string areaDesc;
 
@@ -20,6 +20,6 @@ class Area //should contain list of items, a description, atmosphere, and such
 
     public void placeThing()
     {
-        
+
     }
 }
