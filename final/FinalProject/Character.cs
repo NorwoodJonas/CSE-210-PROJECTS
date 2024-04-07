@@ -5,6 +5,17 @@ class Character : GenericThing //Why is a character a GenericThing? So that I ca
 
     }
 
+    public void NewPlayerCharacter()
+    {
+        var rand = new Random();
+        Console.Write("CharacterName: ");
+        name = Console.ReadLine();
+        Console.WriteLine("\nI would ask you for stats, but I really don't care. You get these: ");
+        health = rand.Next(5, 15);
+        strength = rand.Next(5,10);
+        Console.WriteLine($"Strength: {strength} Health: {health}");
+    }
+
     public Character() : base()
     {}
 

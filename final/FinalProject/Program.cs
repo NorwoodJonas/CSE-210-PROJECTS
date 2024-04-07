@@ -24,7 +24,9 @@ class Program
         WordReference dic = new();
         Commanding commands = new(dic, w);
         Character playerC = new(commands);
+        playerC.NewPlayerCharacter();
         w.SetActiveCharacter(playerC);
+        commands.Look();
         string input = "";
         string[] whatever;
         input = Console.ReadLine();

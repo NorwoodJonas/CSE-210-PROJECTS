@@ -127,6 +127,11 @@ class Commanding
     {
         
     }
+    
+    public void Look()
+    {
+        worldly.activeArea.DescribeArea();
+    }
 
     public void ChangeArea(int x)
     {
