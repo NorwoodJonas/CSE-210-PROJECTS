@@ -1,3 +1,5 @@
+using System.Collections.Specialized;
+
 class GenericThing //this allows me to have an array of things in an area with all the same functions I can call
 { //You will see
 protected List<GenericThing> inventory; //Don't you love it when a class contains a list of it's own things?
@@ -20,6 +22,9 @@ protected int streetSmarts;
 protected int bookSmarts;
 protected int magicAffinity;
 protected int areaNumber;
+protected int strengthBonus;
+protected int healthBonus;
+protected int speechBonus;
 
 public GenericThing()
 {
@@ -43,7 +48,9 @@ public string GetName()
 
 public void Damage(int damage, string type)
 {
-    return; //why should you be able to damage a GenericThing?
+    health -= damage;
+    //If health is less than 0, destry the item.
+    return; //why should you be able to damage a GenericThing? Because everything has health.
 } //damage type affects how much damage is dealt.
 
 public virtual void Use() //Does whatever this item does, should be implemented with all GenericThings
@@ -73,6 +80,30 @@ public void Give(GenericThing shiny)
 
 public int GetStrength()
 {
-    return strength;
+    int te = 0;
+    foreach(GenericThing g in inventory)
+    {
+        te += g.getStrengthBonus();
+    }
+    return strength + te;
+}
+
+public int getStrengthBonus()
+{
+    return strengthBonus;
+}
+
+public int getHealthBonus()
+{
+    return healthBonus;
+}
+
+public void activateItems()
+{
+    foreach(GenericThing g in inventory)
+    {
+        health += g.getHealthBonus();
+        strength += g.getStrengthBonus();
+    }
 }
 }
