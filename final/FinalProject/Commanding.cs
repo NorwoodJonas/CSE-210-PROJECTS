@@ -133,7 +133,7 @@ class Commanding
     
     public void Look(List<string> input)
     {
-        worldly.activeArea.DescribeArea();
+        Console.WriteLine(worldly.activeArea.DescribeArea());
     }
 
     public void ChangeArea(int x)
