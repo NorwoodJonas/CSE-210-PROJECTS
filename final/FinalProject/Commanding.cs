@@ -9,6 +9,12 @@ class Commanding
 
     private delegate void Cultist(List<string> imps); //I need to make all of these functions take List<string>
 
+    public Commanding()
+    {
+        dict = new WordReference();
+        worldly = new World();
+    }
+
     public Commanding(WordReference dic, World worldd)
     {
         dict = dic;

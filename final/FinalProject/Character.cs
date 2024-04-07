@@ -5,6 +5,9 @@ class Character : GenericThing //Why is a character a GenericThing? So that I ca
 
     }
 
+    public Character() : base()
+    {}
+
     public void ChangeStrength()
     {
 

@@ -32,6 +32,11 @@ public GenericThing(Commanding c)
     commands = c;
 }
 
+public GenericThing()
+{
+    commands = new Commanding();
+}
+
 public int GetHealth()
 {
     return health;

@@ -4,12 +4,17 @@ class World
     private List<Area> areas = new();
     public Area activeArea;
 
-    public PlayerCharacter pc = new(); //need to fix this
+    public Character pc; //need to fix this
+
+    public World()
+    {
+    }
 
     public World(Area a)
     {
         areas.Add(a);
         activeArea = a;
+        pc = new Character();
     }
 
     public void AddArea(Area a)
