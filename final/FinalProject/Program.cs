@@ -26,7 +26,7 @@ class Program
         Character playerC = new(commands);
         playerC.NewPlayerCharacter();
         w.SetActiveCharacter(playerC);
-        commands.Look();
+        commands.Look(new List<string>());
         string input = "";
         string[] whatever;
         input = Console.ReadLine();

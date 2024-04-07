@@ -22,6 +22,9 @@ class Commanding
         functional.Add("go", Go);
         string[] t = {"place"};
         neededThings.Add("go", t); //I wish c# would let me use curly brackets to define string arrays anywhere
+        functional.Add("look", Look);
+        string[] poorPractice = {};
+        neededThings.Add("look", poorPractice);
     }
 
     public void Go(List<string> input) //all functions should be this way
@@ -128,7 +131,7 @@ class Commanding
         
     }
     
-    public void Look()
+    public void Look(List<string> input)
     {
         worldly.activeArea.DescribeArea();
     }
