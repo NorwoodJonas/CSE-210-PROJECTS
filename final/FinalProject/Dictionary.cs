@@ -19,6 +19,10 @@ class WordReference //cant call it dictionary because that already exists
         words.Add("uh", new string[2] {"uh", "MUDA"});
         words.Add("a", new string[2] {"a", "MUDA"});
         words.Add("at", new string[2] {"at", "MUDA"});
+        words.Add("use", new string[2] {"use", "action"});
+        words.Add("activate", new string[2] {"use", "action"});
+        words.Add("employ", new string[2] {"use", "action"});
+        words.Add("operate", new string[2] {"use", "action"});
     }
 
     public WordReference(string[] words, string[][] meanings) //better have same length of arrays

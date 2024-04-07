@@ -25,6 +25,9 @@ class Commanding
         functional.Add("look", Look);
         string[] poorPractice = {};
         neededThings.Add("look", poorPractice);
+        functional.Add("use", Look);
+        string[] ahhhh = {"object"};
+        neededThings.Add("use", ahhhh); //seriously, how do I do this better
     }
 
     public void Go(List<string> input) //all functions should be this way
@@ -140,5 +143,10 @@ class Commanding
     {
         worldly.SetActive(x);
         worldly.activeArea.DescribeArea(); //I would make a function, but it would feel a little silly as that function would just call the active area function so, you know
+    }
+
+    public void Use(List<string> input)
+    {
+
     }
 }
