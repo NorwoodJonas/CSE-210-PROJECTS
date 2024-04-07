@@ -84,14 +84,14 @@ class Commanding
     public void Place() //have all commands have chance of happening
     {
         //Puts item in area
-        worldly.activeArea.PlaceThing(new GenericThing());
+        worldly.activeArea.PlaceThing(new GenericThing(this)); //This isn't what it should be
     }
 
     public void Take(List<string> theft)
     {
         //Take item from active area
         //Find item in area
-        GenericThing g = new(); //fix this
+        GenericThing g = new(this); //fix this
         foreach(GenericThing trinket in worldly.activeArea.thingsInArea)
         {
             if(trinket.GetName() == theft[0]) //could make it so you can list all you want to take

@@ -25,10 +25,11 @@ protected int areaNumber;
 protected int strengthBonus;
 protected int healthBonus;
 protected int speechBonus;
+protected Commanding commands;
 
-public GenericThing()
+public GenericThing(Commanding c)
 {
-
+    commands = c;
 }
 
 public int GetHealth()
