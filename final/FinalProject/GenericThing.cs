@@ -32,6 +32,11 @@ public GenericThing(Commanding c)
     commands = c;
 }
 
+public virtual void WhatsUp() //I don't want to have to mark these as virtual tbh
+{
+    Console.WriteLine($"This is just a {name}, how would you talk to it?");
+}
+
 public GenericThing(Commanding c, string name, string description, string location)
 {
     commands = c;

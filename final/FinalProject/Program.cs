@@ -7,9 +7,9 @@ class Program
         Console.WriteLine("---PoorMansGamesV1.1---");
         Console.WriteLine("Initializing world");
         List<GenericThing> itemsInArea= new();
-        Area a = new("weird hill","There is a tree on this weird hill, it would be a good place to die on.");
-        Area b = new("grassy knoll","This knoll seems suspicously [sic] grassy.");
-        Area c = new("sacred grove","Oh how lovely was the morning...");
+        Area a = new("weird hill","There is a tree on this weird hill, it would be a good place to die on."); //Using a space causes issues with my code
+        Area b = new("grassy knoll","This knoll seems suspicously [sic] grassy.");  //How can I deal with that?
+        Area c = new("sacred grove","Oh how lovely was the morning..."); //In the meantime, I can leave it
         Area d = new("small town","This town is really quite small.");
         Area e = new("","");
         Area f = new("","");

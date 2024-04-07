@@ -1,5 +1,7 @@
 class Character : GenericThing //Why is a character a GenericThing? So that I can keep all of them in the same array ofCourse().
 {
+    public string introMessage = "";
+
     public Character(Commanding c) : base(c)
     {
 
@@ -18,6 +20,17 @@ class Character : GenericThing //Why is a character a GenericThing? So that I ca
 
     public Character() : base()
     {}
+
+    public void setIntroMessage(string message)
+    {
+        introMessage = message;
+    }
+
+    public override void WhatsUp()
+    {
+        Console.WriteLine(introMessage);
+        //Make interactive if you want, I guess it would be important if this was going to be more
+    }
 
     public void ChangeStrength()
     {

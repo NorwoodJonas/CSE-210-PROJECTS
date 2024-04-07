@@ -27,6 +27,11 @@ class WordReference //cant call it dictionary because that already exists
         words.Add("east", new string[2] {"east", "place"});
         words.Add("south", new string[2] {"south", "place"});
         words.Add("west", new string[2] {"west", "place"});
+        words.Add("towards", new string[2] {"preposition", "MUDA"}); //prepositions aren't actually helpful for understanding people
+        words.Add("talk", new string[2] {"talk", "action"});
+        words.Add("communicate", new string[2] {"talk", "action"});
+        words.Add("converse", new string[2] {"talk", "action"});
+        words.Add("speak", new string[2] {"talk", "action"});
     }
 
     public WordReference(string[] words, string[][] meanings) //better have same length of arrays

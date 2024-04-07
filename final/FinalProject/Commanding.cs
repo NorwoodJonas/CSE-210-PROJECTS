@@ -110,6 +110,11 @@ class Commanding
         worldly.activeArea.PlaceThing(new GenericThing(this)); //This isn't what it should be
     }
 
+    public void Talk(GenericThing bro)
+    {
+        bro.WhatsUp();
+    }
+
     public void Take(List<string> theft)
     {
         //Take item from active area
