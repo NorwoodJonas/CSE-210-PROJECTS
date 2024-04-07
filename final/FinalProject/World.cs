@@ -1,10 +1,10 @@
 class World
 { //should contain a list of areas, and things affecting area
     private int time = 0; //time, goes between cycles of 86,400 per day
-    private List<Area> areas;
+    private List<Area> areas = new();
     public Area activeArea;
 
-    public Character pc;
+    // public Character pc; //need to fix this
 
     public World(Area a)
     {

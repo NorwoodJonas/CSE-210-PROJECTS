@@ -1,6 +1,6 @@
 class Portal : GenericThing
 { //A GenericThing that when used will move player to a different area
-    public int areaName;
+    public int areaAccess = 0;
 
     public Portal(Commanding c) : base(c)
     {
@@ -8,6 +8,6 @@ class Portal : GenericThing
     }
     public override void Use()
     {
-        commands.ChangeArea(areaName);
+        commands.ChangeArea(areaAccess);
     }
 }

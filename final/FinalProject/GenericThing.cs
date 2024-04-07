@@ -2,29 +2,29 @@ using System.Collections.Specialized;
 
 class GenericThing //this allows me to have an array of things in an area with all the same functions I can call
 { //You will see
-protected List<GenericThing> inventory; //Don't you love it when a class contains a list of it's own things?
-protected string name;
-protected string description;
-protected int health; //All things have health, maybe a portal will have way more health but IDK
-protected List<string> status; //Contains statii such as poisened, fired, depressed, encumbered, etc.
-protected string location; //A string describing location, it is assumed you can access all things in an area
-protected int weight; //Because characters should have a carrying capacity
-protected int[] baseDamage; //Base damage, based on strength
-protected int wieldliness; //How easy it is to hit something with the weapon
-protected string[] damageType; //Types of damage inflicted, emotional damage should be a fun mechanic
-protected int height;
-protected int width;
-protected int girth; //girth, width, and height approximate a box
-protected int strength; //athletics should be based off of weight and strength
-protected int agility;
-protected int speech;
-protected int streetSmarts;
-protected int bookSmarts;
-protected int magicAffinity;
-protected int areaNumber;
-protected int strengthBonus;
-protected int healthBonus;
-protected int speechBonus;
+protected List<GenericThing> inventory = new(); //Don't you love it when a class contains a list of it's own things?
+protected string name = "";
+protected string description = "";
+protected int health = 0; //All things have health, maybe a portal will have way more health but IDK
+protected List<string> status = new(); //Contains statii such as poisened, fired, depressed, encumbered, etc.
+protected string location = ""; //A string describing location, it is assumed you can access all things in an area
+protected int weight = 0; //Because characters should have a carrying capacity
+protected int[] baseDamage = {0}; //Base damage, based on strength
+protected int wieldliness = 0; //How easy it is to hit something with the weapon
+protected string[] damageType = {""}; //Types of damage inflicted, emotional damage should be a fun mechanic
+protected int height = 0;
+protected int width = 0;
+protected int girth = 0; //girth, width, and height approximate a box
+protected int strength = 0; //athletics should be based off of weight and strength
+protected int agility = 0;
+protected int speech = 0;
+protected int streetSmarts = 0;
+protected int bookSmarts = 0;
+protected int magicAffinity = 0;
+protected int areaNumber = 0;
+protected int strengthBonus = 0;
+protected int healthBonus = 0;
+protected int speechBonus = 0;
 protected Commanding commands;
 
 public GenericThing(Commanding c)

@@ -2,10 +2,10 @@ using System.Diagnostics.Contracts;
 
 class Commanding
 {
-    Dictionary<string, Cultist> functional;
+    Dictionary<string, Cultist> functional = new();
     WordReference dict;
     World worldly;
-    Dictionary<string, string[]> neededThings;
+    Dictionary<string, string[]> neededThings = new();
 
     private delegate void Cultist(List<string> imps); //I need to make all of these functions take List<string>
 
