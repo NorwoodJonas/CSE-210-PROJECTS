@@ -4,7 +4,7 @@ class World
     private List<Area> areas = new();
     public Area activeArea;
 
-    public Character pc; //need to fix this
+    public PlayerCharacter pc = new(); //need to fix this
 
     public World(Area a)
     {
