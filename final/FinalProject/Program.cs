@@ -23,14 +23,14 @@ class Program
         w.AddArea(g);
         WordReference dic = new();
         Commanding commands = new(dic, w);
-        bool done = false;
         string input = "";
         string[] whatever;
-        while(!done)
+        input = Console.ReadLine();
+        whatever = input.Split();
+        while(commands.Do(whatever))
         {
             input = Console.ReadLine();
             whatever = input.Split();
-            commands.Do(whatever);
         }
     }
 }

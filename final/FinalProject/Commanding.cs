@@ -32,7 +32,7 @@ class Commanding
         Console.WriteLine($"You fail to {0} anywhere", input[0]); //you fail to go anywhere, etc. Could be done better
     }
 
-    public void Do(string[] input)
+    public bool Do(string[] input)
     {
         //Get a string[] of wordtypes and string[] of meanings
         List<string> wordType = new(); //I prefer using lists, okay
@@ -57,6 +57,10 @@ class Commanding
             }
             temp++;
         }
+        if(meaning[actionNum] == "quit") //allows program to exit if user wants to quit
+        {
+            return false;
+        }
         //Try finding other words associated with that action
         string[] wordsToFind = neededThings[meaning[actionNum]];
         List<string> arguably = new();
@@ -78,6 +82,7 @@ class Commanding
         //Call function with associated words
         Cultist worthy = functional[input[actionNum]]; //How to properly invoke these delegates? Getting closer.
         worthy(arguably); //Okay, so, apparently I can use a non-generic delegate, which while I like using generic things it is better not to. SMH
+        return true;
     }
     //Make all of the commands that affect things here, things like items, spells, characters, and such will call commands here
 
