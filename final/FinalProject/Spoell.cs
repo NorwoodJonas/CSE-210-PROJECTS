@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Microsoft.VisualBasic;
 
 class Spoell //character class will have list of spoells
 { //like an item, but cast as a spoell
@@ -18,7 +19,22 @@ class Spoell //character class will have list of spoells
         level = l;
     }
 
-    public void Cast()
+    public void Cast(GenericThing g)
     { //does whatever spell does, heals, damages
+        var rand = new Random();
+        if(heal != 0)
+        {
+            if(rand.Next(level) * 10 > 0.5 * g.GetHealth())
+            {
+                g.Heal(rand.Next(level) * 10);
+            }
+        }
+        if(damage != 0)
+        {
+            if(rand.Next(level) > 0.5 * g.GetStrength())
+            {
+                g.Damage(rand.Next(level) * 2, "spell");
+            }
+        }
     }
 }

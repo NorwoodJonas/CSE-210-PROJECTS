@@ -70,4 +70,9 @@ public void Give(GenericThing shiny)
 {
     inventory.Add(shiny);
 }
+
+public int GetStrength()
+{
+    return strength;
+}
 }
