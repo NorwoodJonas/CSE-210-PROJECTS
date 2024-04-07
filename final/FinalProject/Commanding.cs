@@ -49,7 +49,7 @@ class Commanding
         {
             whyDoINeedThis = dict.Meaning(s);
             meaning.Add(whyDoINeedThis[0]);
-            meaning.Add(whyDoINeedThis[1]);
+            wordType.Add(whyDoINeedThis[1]);
         }
 
         //Go look at the first action
