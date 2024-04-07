@@ -24,6 +24,9 @@ class Program
         WordReference dic = new();
         Commanding commands = new(dic, w);
         Character playerC = new(commands);
+        a.PlaceThing(new Portal(commands, 1, "north", "to the north you see a grassy knoll", "meow"));
+        b.PlaceThing(new Portal(commands, 2, "east", "to the east you see a sacred grove", "meow"));
+        c.PlaceThing(new Portal(commands, 3, "west", "to the west you see a small town", "meow"));
         playerC.NewPlayerCharacter();
         w.SetActiveCharacter(playerC);
         commands.Look(new List<string>());

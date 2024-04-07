@@ -19,8 +19,8 @@ class Commanding
     {
         dict = dic;
         worldly = worldd;
-        functional.Add("go", Go);
-        string[] t = {"place"};
+        functional.Add("go", Go); //go is a poorly implemented function tbh, Maybe I will change it, probably not
+        string[] t = {"place"}; //Because it allows you to go anywhere, but you want to limit the person to access from portals in the area
         neededThings.Add("go", t); //I wish c# would let me use curly brackets to define string arrays anywhere
         functional.Add("look", Look);
         string[] poorPractice = {};
@@ -28,6 +28,7 @@ class Commanding
         functional.Add("use", Look);
         string[] ahhhh = {"object"};
         neededThings.Add("use", ahhhh); //seriously, how do I do this better
+        //Add examine/inspect
     }
 
     public void Go(List<string> input) //all functions should be this way
