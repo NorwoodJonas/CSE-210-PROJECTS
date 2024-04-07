@@ -23,6 +23,10 @@ class WordReference //cant call it dictionary because that already exists
         words.Add("activate", new string[2] {"use", "action"});
         words.Add("employ", new string[2] {"use", "action"});
         words.Add("operate", new string[2] {"use", "action"});
+        words.Add("north", new string[2] {"north", "place"}); //These are definitions of places and directions
+        words.Add("east", new string[2] {"east", "place"});
+        words.Add("south", new string[2] {"south", "place"});
+        words.Add("west", new string[2] {"west", "place"});
     }
 
     public WordReference(string[] words, string[][] meanings) //better have same length of arrays
@@ -65,7 +69,7 @@ class WordReference //cant call it dictionary because that already exists
         }
         if(closeness > 30) //how close do you want the word to be to use it?
         {
-            Console.WriteLine("I thought that" + closest + "was the closest word in the dictionary.");
+            Console.WriteLine("I thought that " + closest + " was the closest word in the dictionary."); //I am leaving this in because it is nice to see what the code is doing
             return closest;
         }
         else return "!!!1337!!!-x-x-x-***CODING***"; //Something unlikely to be similar to use input
@@ -78,7 +82,7 @@ class WordReference //cant call it dictionary because that already exists
         //remove difference of length
         int al = a.Length;
         int bl = b.Length;
-        x -= (al > bl)?(al-bl-1):(bl-al-1) * 2;
+        x -= (al > bl)?(al-bl-1):(bl-al-1) * 10; //So the problem with this algorithm is that shorter words automatically get less penalty
 
         //remove number of characters that are different between strings
         if(al < bl)
