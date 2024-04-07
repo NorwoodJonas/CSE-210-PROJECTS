@@ -23,6 +23,8 @@ class Program
         w.AddArea(g);
         WordReference dic = new();
         Commanding commands = new(dic, w);
+        Character playerC = new(commands);
+        w.SetActiveCharacter(playerC);
         string input = "";
         string[] whatever;
         input = Console.ReadLine();

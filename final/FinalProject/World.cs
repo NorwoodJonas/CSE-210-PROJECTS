@@ -14,7 +14,12 @@ class World
     {
         areas.Add(a);
         activeArea = a;
-        pc = new Character();
+        pc = new Character(); //change character later
+    }
+
+    public void SetActiveCharacter(Character c)
+    {
+        pc = c;
     }
 
     public void AddArea(Area a)
