@@ -6,6 +6,15 @@ class Area //should contain list of items, a description, atmosphere, and such
 
     public Area()
     {
+        areaName = "VOID";
+        areaDesc = "There is nothing here, the programmer was too lazy to actually make an area.";
+    }
+
+    public Area(string name, string desc, List<GenericThing> things)
+    {
+        areaName = name;
+        areaDesc = desc;
+        thingsInArea = things;
     }
 
     public string DescribeArea()
@@ -18,8 +27,8 @@ class Area //should contain list of items, a description, atmosphere, and such
         return temp;
     }
 
-    public void placeThing()
+    public void PlaceThing(GenericThing g)
     {
-
+        thingsInArea.Add(g);
     }
 }

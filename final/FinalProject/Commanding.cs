@@ -81,9 +81,10 @@ class Commanding
     }
     //Make all of the commands that affect things here, things like items, spells, characters, and such will call commands here
 
-    public static void Place() //have all commands have chance of happening
+    public void Place() //have all commands have chance of happening
     {
         //Puts item in area
+        worldly.activeArea.PlaceThing(new GenericThing());
     }
 
     public void Take(List<string> theft)

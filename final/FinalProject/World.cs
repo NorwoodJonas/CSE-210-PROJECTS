@@ -6,13 +6,15 @@ class World
 
     public Character pc;
 
-    public World()
+    public World(Area a)
     {
+        areas.Add(a);
+        activeArea = a;
     }
 
-    public void AddArea()
+    public void AddArea(Area a)
     {
-
+        areas.Add(a);
     }
 
     public void SetTime(int x)

@@ -1,4 +1,4 @@
-abstract class GenericThing //this allows me to have an array of things in an area with all the same functions I can call
+class GenericThing //this allows me to have an array of things in an area with all the same functions I can call
 { //You will see
 protected List<GenericThing> inventory; //Don't you love it when a class contains a list of it's own things?
 protected string name;
@@ -20,6 +20,11 @@ protected int streetSmarts;
 protected int bookSmarts;
 protected int magicAffinity;
 protected int areaNumber;
+
+public GenericThing()
+{
+
+}
 
 public int GetHealth()
 {

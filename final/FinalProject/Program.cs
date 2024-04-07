@@ -6,7 +6,8 @@ class Program
     {
         Console.WriteLine("---PoorMansGamesV1.1---");
         Console.WriteLine("Initializing world");
-        World w = new();
+        Area a = new();
+        World w = new(a);
         WordReference dic = new();
         Commanding commands = new(dic, w);
         bool done = false;
