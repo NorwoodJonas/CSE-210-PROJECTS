@@ -28,6 +28,8 @@ class Commanding
         functional.Add("use", Look);
         string[] ahhhh = {"object"};
         neededThings.Add("use", ahhhh); //seriously, how do I do this better
+        functional.Add("talk", Talk);
+        neededThings.Add("talk", poorPractice); //seriously, how do I do this better
         //Add examine/inspect
     }
 
@@ -110,9 +112,23 @@ class Commanding
         worldly.activeArea.PlaceThing(new GenericThing(this)); //This isn't what it should be
     }
 
-    public void Talk(GenericThing bro)
+    public void Talk(List<string> brosName)
     {
+        GenericThing bro = FindFromName(brosName[0]);
         bro.WhatsUp();
+    }
+
+    public GenericThing FindFromName(string name) //I should have done this sooner
+    {
+        GenericThing g = new(this);
+        foreach(GenericThing trinket in worldly.activeArea.thingsInArea)
+        {
+            if(trinket.GetName() == name) //could make it so you can list all you want to take
+            {
+                g = trinket;
+            }
+        }
+        return g; //Oh no, it will return an empty object if nothing is found. SMH.
     }
 
     public void Take(List<string> theft)
