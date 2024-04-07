@@ -32,6 +32,22 @@ public GenericThing(Commanding c)
     commands = c;
 }
 
+public GenericThing(Commanding c, string name, string description, string location)
+{
+    commands = c;
+    this.name = name;
+    this.description = description;
+    this.location = location;
+}
+
+public GenericThing(string name) //Please don't use this, it only is for nothing
+{
+    this.name = name;
+    this.description = "This is nothing, the programmer was being lazy.";
+    this.location = "nowhere";
+    commands = new Commanding();
+}
+
 public GenericThing()
 {
     commands = new Commanding();

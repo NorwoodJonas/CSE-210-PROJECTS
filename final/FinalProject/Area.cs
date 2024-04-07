@@ -14,6 +14,8 @@ class Area //should contain list of items, a description, atmosphere, and such
     {
         areaName = name;
         areaDesc = desc;
+        thingsInArea = new List<GenericThing>();
+        thingsInArea.Add(new GenericThing("Nothing"));
     }
 
     public Area(string name, string desc, List<GenericThing> things)
