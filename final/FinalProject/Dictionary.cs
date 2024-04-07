@@ -2,7 +2,7 @@ using System.Data;
 
 class WordReference //cant call it dictionary because that already exists
 {
-    private Dictionary<string, string[]> words; //words[0] is the most basic synonym, words[1] is the type of word (noun, verb, etc)
+    private Dictionary<string, string[]> words = new(); //words[0] is the most basic synonym, words[1] is the type of word (noun, verb, etc)
 
     public WordReference()
     {

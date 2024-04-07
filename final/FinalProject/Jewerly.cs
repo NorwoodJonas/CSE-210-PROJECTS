@@ -3,11 +3,11 @@ using System.Security.AccessControl;
 
 class Jewerly : GenericThing
 { //A GenericThing that adjusts character stats
-    List<string> usefulness;
+    List<string> usefulness = new();
     Random ran = new();
     private int level;
 
-    public Jewerly(int l)
+    public Jewerly(int l, Commanding c) : base(c)
     {
         usefulness.Add($"The {name} shines with brilliant lustre...");
         usefulness.Add($"You can't helped but be entranced by the {name}");
