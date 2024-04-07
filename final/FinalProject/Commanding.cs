@@ -70,6 +70,11 @@ class Commanding
             }
             temp++;
         }
+        if(actionNum == -1) //In case nothing was found
+        {
+            Console.WriteLine("You make no sense.");
+            return true;
+        }
         if(meaning[actionNum] == "quit") //allows program to exit if user wants to quit
         {
             return false;

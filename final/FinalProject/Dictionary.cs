@@ -60,21 +60,25 @@ class WordReference //cant call it dictionary because that already exists
             if(temp > closeness)
             {
                 closest = w;
+                closeness = temp;
             }
         }
-        if(closeness > 45) //how close do you want the word to be to use it?
+        if(closeness > 30) //how close do you want the word to be to use it?
+        {
+            Console.WriteLine("I thought that" + closest + "was the closest word in the dictionary.");
             return closest;
+        }
         else return "!!!1337!!!-x-x-x-***CODING***"; //Something unlikely to be similar to use input
     }
 
-    private int CheckSimilarity(string a, string b)
+    private int CheckSimilarity(string a, string b) //This thing is not that good, fix weights
     {
         int x = 50; //50 is highest score, each test removes points if not exact match
 
         //remove difference of length
         int al = a.Length;
         int bl = b.Length;
-        x -= (al > bl)?(al-bl-1):(bl-al-1);
+        x -= (al > bl)?(al-bl-1):(bl-al-1) * 2;
 
         //remove number of characters that are different between strings
         if(al < bl)
