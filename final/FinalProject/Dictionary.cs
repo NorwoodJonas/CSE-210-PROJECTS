@@ -1,7 +1,8 @@
 /*
 *   Proposal for a better method:
 *   Instead of splitting input into words and processing based on that
-*   One could use regular expressions to split words into groups
+*   One could use regular expressions to split words into 
+*   But what grouping would I use? Syllables?
 *   However, there may not be enough time for that.
 *
 *   Also, add something that makes names added to dictionary by default in constructor.

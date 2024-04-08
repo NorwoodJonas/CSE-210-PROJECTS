@@ -104,7 +104,7 @@ class Commanding
         //I need a list of word types I need with each command. Done.
         //Guess object in area associated with nouns, only if you need nouns though
         //Call function with associated words
-        Cultist worthy = functional[input[actionNum]]; //How to properly invoke these delegates? Getting closer.
+        Cultist worthy = functional[meaning[actionNum]]; //How to properly invoke these delegates? Getting closer. //I changed this from input to meaning, that was wrong, now it is correct
         worthy(arguably); //Okay, so, apparently I can use a non-generic delegate, which while I like using generic things it is better not to. SMH
         return true;
     }
