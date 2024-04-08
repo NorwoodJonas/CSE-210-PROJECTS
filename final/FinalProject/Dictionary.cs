@@ -1,8 +1,18 @@
+/*
+*   Proposal for a better method:
+*   Instead of splitting input into words and processing based on that
+*   One could use regular expressions to split words into groups
+*   However, there may not be enough time for that.
+*
+*   Also, add something that makes names added to dictionary by default in constructor.
+*   That way you could add the description to the dictionary
+*/
+
 using System.Data;
 
 class WordReference //cant call it dictionary because that already exists
 {
-    private Dictionary<string, string[]> words = new(); //words[0] is the most basic synonym, words[1] is the type of word (noun, verb, etc)
+    private Dictionary<string, string[]> words = new(); //words[0] is the most basic synonym, words[1] is the type of word (noun, verb, etc)W
 
     public WordReference()
     {
