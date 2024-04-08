@@ -92,7 +92,7 @@ public virtual void Heal(int amount)
 
 public string DescribeGenericThing()
 {
-    return description + location;
+    return description + " " + location;
 }
 
 public void ChangeLocation() //changes location to wherever
