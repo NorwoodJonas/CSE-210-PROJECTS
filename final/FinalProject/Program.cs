@@ -27,7 +27,7 @@ class Program
         a.PlaceThing(new Portal(commands, 1, "north", "to the north you see a grassy knoll", "meow"));
         b.PlaceThing(new Portal(commands, 2, "east", "to the east you see a sacred grove", "meow"));
         c.PlaceThing(new Portal(commands, 3, "west", "to the west you see a small town", "meow"));
-        Character emptyC = new(commands, "bob", "A shady looking figure", "leaning against the tree");
+        Character emptyC = new(commands, "bob", "A shady looking figure, named bob", "leaning against the tree");
         emptyC.setIntroMessage("Sup?");
         a.PlaceThing(emptyC);
         playerC.NewPlayerCharacter();

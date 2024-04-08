@@ -86,7 +86,7 @@ class Commanding
             return false;
         }
         //Try finding other words associated with that action
-        string[] wordsToFind = neededThings[meaning[actionNum]]; //Add error checking if there aren't enough arguments corresponding to the command.
+        string[] wordsToFind = neededThings[meaning[actionNum]];
         List<string> arguably = new();
         foreach(string s in wordsToFind)
         {
