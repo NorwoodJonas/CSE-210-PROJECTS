@@ -21,6 +21,10 @@ class Character : GenericThing //Why is a character a GenericThing? So that I ca
     public Character() : base()
     {}
 
+    public Character(Commanding c, string name, string description, string location) : base(c, name, description, location)
+    {
+    }
+
     public void setIntroMessage(string message)
     {
         introMessage = message;

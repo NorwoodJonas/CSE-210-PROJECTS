@@ -35,6 +35,10 @@ class Commanding
 
     public void Go(List<string> input) //all functions should be this way
     {
+        if(!input.Any())
+        { //error checking
+            return;
+        }
         //Check to see if any other part of the string is in the area
         foreach(GenericThing g in worldly.activeArea.thingsInArea)
         {
@@ -82,7 +86,7 @@ class Commanding
             return false;
         }
         //Try finding other words associated with that action
-        string[] wordsToFind = neededThings[meaning[actionNum]];
+        string[] wordsToFind = neededThings[meaning[actionNum]]; //Add error checking if there aren't enough arguments corresponding to the command.
         List<string> arguably = new();
         foreach(string s in wordsToFind)
         {
@@ -114,6 +118,10 @@ class Commanding
 
     public void Talk(List<string> brosName)
     {
+        if(!brosName.Any()) //could add to findFromName
+        { //error checking
+            return;
+        }
         GenericThing bro = FindFromName(brosName[0]);
         bro.WhatsUp();
     }
